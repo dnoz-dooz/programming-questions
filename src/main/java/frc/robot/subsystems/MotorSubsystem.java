@@ -26,16 +26,16 @@ public class MotorSubsystem extends Subsystem {
    */
 
   /** The Spark motor controller for the front left side of the robot. */
-  private final Spark frontLeft = new Spark(RobotMap.frontLeftSparkPort);
+  private final Spark frontLeft = new Spark(RobotMap.backLeftSparkPort);
 
   /** The Spark motor controller for the front right side of the robot. */
-  private final Spark frontRight = new Spark(RobotMap.frontRightSparkPort);
+  private final Spark frontRight = new Spark(RobotMap.backRightSparkPort);
 
   /** The Spark motor controller for the back left side of the robot. */
-  private final Spark backLeft = new Spark(RobotMap.backLeftSparkPort);
+  private final Spark backLeft = new Spark(RobotMap.frontLeftSparkPort);
 
   /** The Spark motor controller for the back right side of the robot. */
-  private final Spark backRight = new Spark(RobotMap.backRightSparkPort);
+  private final Spark backRight = new Spark(RobotMap.frontRightSparkPort);
    
   /** Speed controller group for the motor controllers on the left. */
    private final SpeedControllerGroup leftMotorControllers = new SpeedControllerGroup(frontLeft, backLeft);
