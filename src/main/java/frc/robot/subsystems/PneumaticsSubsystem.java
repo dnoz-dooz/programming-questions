@@ -20,10 +20,15 @@ public class PneumaticsSubsystem extends Subsystem {
    * Task 3
    * Add another solenoid with ports 1 and 2
    */
-  public final DoubleSolenoid solenoid = new DoubleSolenoid(
+  public final DoubleSolenoid solenoid1 = new DoubleSolenoid(
     RobotMap.doubleSolenoidForwardChannel,
     RobotMap.doubleSolenoidReverseChannel
   );
+  public final DoubleSolenoid solenoid2 = new DoubleSolenoid(
+    RobotMap.solenoidForwardChannel,
+    RobotMap.solenoidReverseChannel
+  );
+  
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   @Override
