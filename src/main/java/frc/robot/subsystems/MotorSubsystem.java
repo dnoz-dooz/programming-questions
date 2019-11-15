@@ -8,6 +8,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -37,11 +38,6 @@ public class MotorSubsystem extends Subsystem {
   /** The Spark motor controller for the back right side of the robot. */
   private final Spark backRight = new Spark(RobotMap.backRightSparkPort);
    
-  /** Speed controller group for the motor controllers on the left. */
-   private final SpeedControllerGroup leftMotorControllers = new SpeedControllerGroup(frontLeft, backLeft);
-
-   /** Speed controller group for the motor controllers on the right. */
-   private final SpeedControllerGroup rightMotorControllers = new SpeedControllerGroup(frontRight, backRight);
 
   /**
    * The mecanum for the motors.
@@ -51,7 +47,7 @@ public class MotorSubsystem extends Subsystem {
    * Task 4
    * Change the differential drivetrain to a mecanum drivetrain
    */
-  public final DifferentialDrive drive = new DifferentialDrive(leftMotorControllers, rightMotorControllers);
+  public final MecanumDrive drive = new MecanumDrive(frontLeft,backLeft,frontRight,backRight);
 
   public MotorSubsystem() {
     ShuffleboardUtil
